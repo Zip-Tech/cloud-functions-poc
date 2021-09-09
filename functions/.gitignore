@@ -1,0 +1,9 @@
+## Compiled JavaScript files
+**/*.js
+**/*.js.map
+
+# Node Moduls
+node_modules/
+
+# configs
+.runtimeconfig.json
