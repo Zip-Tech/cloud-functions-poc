@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "eslintIgnore": [
-    "spec/**"
-  ],
   "scripts": {
     "test": "jest --coverage",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
