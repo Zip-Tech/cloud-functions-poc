@@ -1,1 +1,1 @@
-# cloud-function-scaffold
+# cloud-functions-poc
