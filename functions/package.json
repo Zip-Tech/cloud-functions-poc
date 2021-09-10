@@ -10,7 +10,7 @@
   ],
   "jest": {},
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --config=jest.config.js",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx "
   },
