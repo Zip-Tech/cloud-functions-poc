@@ -11,7 +11,7 @@ export const getKey = (req: Request, res: Response) => {
 };
 
 export const getValue = (req: Request, res: Response) => {
-  const status = 500;
+  const status = 200;
   res.status(status);
   return res.json({
     keyV4: 'HAHAHAHA'
