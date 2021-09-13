@@ -1,16 +1,22 @@
 import * as jwt from 'jsonwebtoken'
+import { Request, Response } from "express";
 
-export default (request: any, response: any, next: any) => {
+export default (request: Request, response: Response, next: any) => {
     const key = request.get('Authorization');
-    if (!key) {
-        response.status(400).json({ message: 'No Authentication Provided' })
-    } else {
-        verifyJWT(key)
-    }
+    auth(response, key)
     next()
 }
 
-const verifyJWT = (key: string) => {
+export const auth = (response: Response, key?: string) => {
+    if (!key) {
+        response.statusCode = 400
+        response.send({ message: 'No Authentication Provided' })
+    } else {
+        verifyJWT(key)
+    }
+}
+
+export const verifyJWT = (key: string) => {
     try {
         const keypair = key.split(' ')
         return jwt.verify(keypair[1], 'D*F-JaNdRgUkXp2s5v8y/B?E(H+KbPeS')

@@ -6,11 +6,13 @@
   "eslintIgnore": [
     "spec/**",
     "lib/**",
-    "jest.config.js"
+    "jest.config.js",
+    "coverage/**"
   ],
   "jest": {},
   "scripts": {
-    "test": "jest --coverage --config=jest.config.js",
+    "test": "jest --config=jest.config.js",
+    "test:coverage": "jest --coverage --config=jest.config.js",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx ",
     "build": "tsc",
@@ -19,7 +21,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "assert": "^2.0.0",
+    "babel": "^6.23.0",
+    "babel-jest": "^27.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.11.1",
@@ -33,6 +39,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "@jest-mock/express": "^1.4.5",
     "@types/jest": "^27.0.1",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/sinon": "^10.0.2",
