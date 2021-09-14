@@ -8,8 +8,9 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2017",
+    "importHelpers": true,
     "paths":{
-      "@config/*": ["./src/config/*"],
+      "@config": ["./src/config"],
       "@middleware/*": ["./src/middleware/*"]
     }
   },

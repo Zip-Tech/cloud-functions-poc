@@ -1,12 +1,22 @@
 import * as functions from 'firebase-functions';
-import { db } from './config/config'
 import * as express from 'express'
+import * as cookieParser from 'cookie-parser';
+import * as cors from 'cors';
+import * as csrf from 'csurf';
+import * as helmet from 'helmet';
+
+import { db } from '@config'
 import * as auth from './auth/auth-jwt'
 import { middleware } from './middleware/middleware';
 import { router } from './generate/key'
 
-const app = express();
+export const csrfProtection = csrf({ cookie: true });
 
+const app = express();
+app.use(cookieParser());
+app.disable('x-powered-by');
+app.use(cors({ origin: true }));
+app.use(helmet());
 app.use(auth.default);
 app.use(middleware.errorHandler);
 app.use('/api', router);

@@ -2,7 +2,7 @@ import * as functions from "firebase-functions-test";
 import * as admin from "firebase-admin";
 import * as api from '../index'
 import { v4 } from 'uuid';
-import { db } from '../config/config';
+import { db } from '@config';
 
 
 const projectConfig = {
@@ -16,10 +16,6 @@ describe('firestore testing', () => {
 
     let adminStub: any;
     jest.setTimeout(10000)
-
-    // let mockRequest: Partial<Request>
-    // let mockResponse: Partial<Response>;
-    // let responseObject: any;
 
     beforeAll(() => {
         adminStub = jest.spyOn(admin, 'initializeApp');
