@@ -1,5 +1,5 @@
-import {errorHandler} from './notFound';
+import {errorHandler} from './errorHandler';
 
-export default {
+export const middleware = {
     errorHandler
 }

@@ -9,4 +9,8 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
+  moduleNameMapper: {
+    "^config/(.*)": "<rootdir>/src/config/$1",
+    "^middleware/(.*)": "<rootdir>/src/middleware/$1"
+  }
 };

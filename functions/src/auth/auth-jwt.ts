@@ -16,7 +16,7 @@ export const auth = (response: Response, key?: string) => {
     }
 }
 
-export const verifyJWT = (key: string) => {
+export const verifyJWT = (key: string, response?: Response) => {
     try {
         const keypair = key.split(' ')
         return jwt.verify(keypair[1], 'D*F-JaNdRgUkXp2s5v8y/B?E(H+KbPeS')
